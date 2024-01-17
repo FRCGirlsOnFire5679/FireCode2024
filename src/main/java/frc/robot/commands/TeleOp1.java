@@ -62,10 +62,17 @@ public class TeleOp1 extends Command {
     public void execute() {
         double leftSpeedFactor = Constants.DriveConstants.kLeftSpeedFactor;
         double rightSpeedFactor = Constants.DriveConstants.kRightSpeedFactor;
-        if(sprintButton.getAsBoolean() == true){
+        if(sprintButton.getAsBoolean() == true && driveController.getRawAxis(3) <= 0.6){
             m_driveTrain.sprint(leftSpeedFactor * driveController.getRawAxis(1), rightSpeedFactor * driveController.getRawAxis(5));
         } 
-        if(sprintButton.getAsBoolean() == false){
+        if(sprintButton.getAsBoolean() == false && driveController.getRawAxis(3) <= 0.6){
+            m_driveTrain.drive(leftSpeedFactor * driveController.getRawAxis(1), rightSpeedFactor * driveController.getRawAxis(5));
+        }
+        if(sprintButton.getAsBoolean() == false && driveController.getRawAxis(3) > 0.6){
+            m_driveTrain.crawl(leftSpeedFactor, rightSpeedFactor, driveController.getRawAxis(3));
+        }
+
+        if(sprintButton.getAsBoolean() == false && driveController.getRawAxis(3) > 0.6){
             m_driveTrain.drive(leftSpeedFactor * driveController.getRawAxis(1), rightSpeedFactor * driveController.getRawAxis(5));
         }
     }
