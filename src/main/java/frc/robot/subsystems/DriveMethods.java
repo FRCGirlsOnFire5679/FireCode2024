@@ -174,4 +174,17 @@ public class DriveMethods extends SubsystemBase {
         //return;
 
     }
-}
+
+      public void crawlForward(double time) {
+        Timer timer = new Timer();
+        timer.reset();
+        timer.start();
+        while (timer.get() < time) {
+            m_driveTrain.crawl(-Constants.DriveConstants.kAutonomousLeftDriveSpeed, -Constants.DriveConstants.kAutonomousRightDriveSpeed, 1);
+        }           
+            m_driveTrain.drive(0,0);
+        return;
+        
+    }
+        
+    }
