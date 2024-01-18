@@ -97,8 +97,8 @@ public class DriveTrain extends SubsystemBase {
     }
 
     public void crawl(double left, double right, double pressed){
-        double crawlFactor = (pressed - 0.5) * 2;
-        //double crawlFactor = pressed;
+        //double crawlFactor = (pressed - 0.5) * 2;
+        double crawlFactor = pressed;
         robotDrive.tankDrive(left * (Constants.DriveConstants.kCrawlLeftSpeedFactor * crawlFactor), right * (Constants.DriveConstants.kCrawlRightSpeedFactor * crawlFactor));
     }
 }
