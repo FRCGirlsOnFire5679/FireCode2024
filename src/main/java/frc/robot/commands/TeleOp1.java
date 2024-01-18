@@ -69,7 +69,7 @@ public class TeleOp1 extends Command {
             m_driveTrain.drive(leftSpeedFactor * driveController.getRawAxis(1), rightSpeedFactor * driveController.getRawAxis(5));
         }
         if(sprintButton.getAsBoolean() == false && driveController.getRawAxis(3) > 0.6){
-            m_driveTrain.crawl(leftSpeedFactor, rightSpeedFactor, driveController.getRawAxis(3));
+            m_driveTrain.crawl(leftSpeedFactor * driveController.getRawAxis(1), rightSpeedFactor * driveController.getRawAxis(5), driveController.getRawAxis(3));
         }
 
         if(sprintButton.getAsBoolean() == false && driveController.getRawAxis(3) > 0.6){
