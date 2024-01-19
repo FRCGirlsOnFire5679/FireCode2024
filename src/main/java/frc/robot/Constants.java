@@ -40,5 +40,6 @@ public class Constants {
         public static final double kOffBalence = 5;
 
       //left drives at 93.023256% the speed of the right
+      //based on 2023 stats
     }
 }
