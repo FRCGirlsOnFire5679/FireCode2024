@@ -185,6 +185,17 @@ public class DriveMethods extends SubsystemBase {
             m_driveTrain.drive(0,0);
         return;
         
-    }
         
     }
+
+     public void brakeFree() {
+        m_driveTrain.setCoast();
+     }
+
+     public void brakeLock() {
+        m_driveTrain.setBrake();
+     }
+        
+        
+    }
+

@@ -57,6 +57,12 @@ public class AutoTEST extends Command {
         while (num < 1){
             m_DriveMethods.driveForward(2);
             m_DriveMethods.crawlForward(3);
+            m_DriveMethods.brakeFree();
+            m_DriveMethods.drivePause(3);
+            m_DriveMethods.driveBackwards(3);
+            m_DriveMethods.brakeLock();
+            m_DriveMethods.drivePause(3);
+            m_DriveMethods.driveForward(3);
             num ++;
         }
         m_DriveMethods.driveStop();

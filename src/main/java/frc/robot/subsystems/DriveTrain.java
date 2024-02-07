@@ -18,6 +18,7 @@ import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 import com.revrobotics.CANSparkMax;
+import com.revrobotics.CANSparkBase.IdleMode;
 import com.revrobotics.CANSparkLowLevel.MotorType;
 
 
@@ -100,5 +101,19 @@ public class DriveTrain extends SubsystemBase {
         //double crawlFactor = (pressed - 0.5) * 2;
         double crawlFactor = pressed;
         robotDrive.tankDrive(left * (Constants.DriveConstants.kCrawlLeftSpeedFactor * crawlFactor), right * (Constants.DriveConstants.kCrawlRightSpeedFactor * crawlFactor));
+    }
+
+    public void setBrake(){
+        frontLeftController.setIdleMode(IdleMode.kBrake);
+        frontRightController.setIdleMode(IdleMode.kBrake);
+        rearRightController.setIdleMode(IdleMode.kBrake);
+        rearLeftController.setIdleMode(IdleMode.kBrake);
+    }
+
+    public void setCoast(){
+        frontLeftController.setIdleMode(IdleMode.kCoast);
+        frontRightController.setIdleMode(IdleMode.kCoast);
+        rearRightController.setIdleMode(IdleMode.kCoast);
+        rearLeftController.setIdleMode(IdleMode.kCoast);
     }
 }
