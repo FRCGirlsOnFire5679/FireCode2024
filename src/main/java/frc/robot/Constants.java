@@ -20,10 +20,10 @@ package frc.robot;
  */
 public class Constants {
     public static final class DriveConstants {
-        public static final int kLeftMotorFrontPort = 0;
-        public static final int kLeftMotorBackPort = 1;
-        public static final int kRightMotorFrontPort = 2;
-        public static final int kRightMotorBackPort = 3;
+        public static final int kLeftMotorFrontPort = 1;
+        public static final int kLeftMotorBackPort = 2;
+        public static final int kRightMotorFrontPort =3;
+        public static final int kRightMotorBackPort = 4;
 
         public static final double kAutonomousLeftDriveSpeed = .68;
         public static final double kAutonomousRightDriveSpeed = .65;
