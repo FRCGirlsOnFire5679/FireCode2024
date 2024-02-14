@@ -37,8 +37,6 @@ public class Constants {
         public static final double kCrawlLeftSpeedFactor = 0.65;
         public static final double kCrawlRightSpeedFactor = 0.65;
 
-        public static final double kOffBalence = 5;
-
         public static final double kOutputPower = 0.8;
         public static final double kInputPower = -0.8;
       //left drives at 93.023256% the speed of the right
