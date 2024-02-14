@@ -73,7 +73,7 @@ public class AutoBlue1 extends Command {
             m_DriveMethods.driveForward(1);
             m_DriveMethods.driveTurnR(1);
             m_DriveMethods.driveForward(2);
-            m_DriveMethods.autoBalence();
+
             num ++;
         }
         m_DriveMethods.driveStop();

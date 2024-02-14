@@ -69,7 +69,7 @@ public class AutoBlue3 extends Command {
         while (num < 1){
             //m_DriveMethods.intakeRelease(1);
             m_DriveMethods.driveBackwards(1);
-            m_DriveMethods.autoBalence();
+
             num ++;
         }
         m_DriveMethods.driveStop();
