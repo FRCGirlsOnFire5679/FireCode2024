@@ -55,14 +55,14 @@ public class AutoTEST extends Command {
     @Override
     public void execute() {
         while (num < 1){
-            m_DriveMethods.driveForward(2);
-            m_DriveMethods.crawlForward(3);
+            m_DriveMethods.driveForward(1.5);
+            m_DriveMethods.crawlForward(2);
             m_DriveMethods.brakeFree();
-            m_DriveMethods.drivePause(3);
-            m_DriveMethods.driveBackwards(3);
+            m_DriveMethods.drivePause(2);
+            m_DriveMethods.driveBackwards(1.5);
             m_DriveMethods.brakeLock();
-            m_DriveMethods.drivePause(3);
-            m_DriveMethods.driveForward(3);
+            m_DriveMethods.drivePause(2);
+            m_DriveMethods.driveForward(1.5);
             num ++;
         }
         m_DriveMethods.driveStop();
