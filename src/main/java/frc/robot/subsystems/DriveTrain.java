@@ -94,17 +94,17 @@ public class DriveTrain extends SubsystemBase {
     }
 
     public void sprint(double left, double right){
-       robotDrive.tankDrive(left * Constants.DriveConstants.kSprintLeftSpeedFactor, right * Constants.DriveConstants.kSprintRightSpeedFactor);
+        robotDrive.tankDrive(left * Constants.DriveConstants.kSprintLeftSpeedFactor, right * Constants.DriveConstants.kSprintRightSpeedFactor);
     }
 
     public void crawl(double left, double right, double pressed){
         //double crawlFactor = (pressed - 0.5) * 2;
         
-        pressed = 1 - pressed;
+        double offset = 1 - pressed;
         double diffrenceRight = 1 - Constants.DriveConstants.kCrawlRightSpeedFactor;
         double diffrenceLeft = 1 - Constants.DriveConstants.kCrawlLeftSpeedFactor;
-        double crawlFactorRight = (diffrenceRight * pressed) + Constants.DriveConstants.kCrawlRightSpeedFactor;
-        double crawlFactorLeft = (diffrenceLeft * pressed) + Constants.DriveConstants.kCrawlLeftSpeedFactor;
+        double crawlFactorRight = (diffrenceRight * offset) + Constants.DriveConstants.kCrawlRightSpeedFactor;
+        double crawlFactorLeft = (diffrenceLeft * offset) + Constants.DriveConstants.kCrawlLeftSpeedFactor;
         
         robotDrive.tankDrive(left * crawlFactorLeft, right * crawlFactorRight);
     }
