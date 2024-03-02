@@ -90,7 +90,7 @@ public class TeleOp2 extends Command {
             }
         }
         
-        if(operatorController.getRawButton(3)){
+        if(operatorController.getRawButton(2)){
             m_shooter.shoot(1);
         }
         else {
