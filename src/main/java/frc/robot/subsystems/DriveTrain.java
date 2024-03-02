@@ -53,8 +53,14 @@ public class DriveTrain extends SubsystemBase {
         rearLeftController = new CANSparkMax(Constants.DriveConstants.kLeftMotorBackPort, MotorType.kBrushed);
         rearLeftController.setInverted(false);
 
+        frontLeftController = new CANSparkMax(Constants.DriveConstants.kLeftMotorFrontPort, MotorType.kBrushed);
+        frontLeftController.setInverted(false);
+
         rearRightController = new CANSparkMax(Constants.DriveConstants.kRightMotorBackPort, MotorType.kBrushed);
         rearRightController.setInverted(true);
+
+        frontRightController = new CANSparkMax(Constants.DriveConstants.kRigtMotorFrontPort, MotorType.kBrushed);
+        frontRightController.setInverted(true);
 
         frontLeftController.follow(rearLeftController);
         frontRightController.follow(rearRightController);

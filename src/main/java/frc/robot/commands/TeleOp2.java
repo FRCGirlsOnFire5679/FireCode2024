@@ -90,15 +90,15 @@ public class TeleOp2 extends Command {
             }
         }
         
-        if(checkShoot()){
-            m_shooter.shoot(0.75);
+        if(operatorController.getRawButton(3)){
+            m_shooter.shoot(1);
         }
         else {
             m_shooter.shoot(0);
         }
 
-        if(checkIntake()){
-            m_shooter.intake(0.75);
+        if(operatorController.getRawButton(1)){
+            m_shooter.intake(1);
         }
         else {
             m_shooter.intake(0);
