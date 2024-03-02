@@ -20,10 +20,12 @@ package frc.robot;
  */
 public class Constants {
     public static final class DriveConstants {
-        public static final int kLeftMotorFrontPort = 1;
-        public static final int kLeftMotorBackPort = 2;
-        public static final int kRightMotorFrontPort =3;
-        public static final int kRightMotorBackPort = 4;
+      public static final int kLeftMotorBackPort = 2;
+      public static final int kRightMotorBackPort = 4;
+
+      // Not actually used due to following
+      public static final int kLeftMotorFrontPort = 1;
+      public static final int kRightMotorFrontPort =3;
 
         public static final double kAutonomousLeftDriveSpeed = .65;
         public static final double kAutonomousRightDriveSpeed = .65;
@@ -41,5 +43,7 @@ public class Constants {
         public static final double kInputPower = -0.8;
       //left drives at 93.023256% the speed of the right
       //based on 2023 stats
+        public static final int kLeftShooterMotorPort = 0;
+        public static final int kRightShooterMotorPort = 1;
     }
 }
