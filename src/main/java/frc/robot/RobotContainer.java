@@ -48,7 +48,7 @@ public class RobotContainer {
   // The robot's subsystems
   public final DriveTrain m_driveTrain = new DriveTrain();
   public final Shooter m_shooter = new Shooter();
-  public final DriveMethods m_DriveMethods = new DriveMethods(m_driveTrain);
+  public final DriveMethods m_DriveMethods = new DriveMethods(m_driveTrain, m_shooter);
   // Joysticks
   private final XboxController joystick = new XboxController(0);
 
