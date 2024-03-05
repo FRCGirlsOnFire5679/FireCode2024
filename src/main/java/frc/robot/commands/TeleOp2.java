@@ -63,19 +63,14 @@ public class TeleOp2 extends Command {
     public void execute() {
         double leftSpeedFactor = Constants.DriveConstants.kLeftSpeedFactor;
         double rightSpeedFactor = Constants.DriveConstants.kRightSpeedFactor;
-        if(sprintButton.getAsBoolean() == true && driveController.getRawAxis(3) <= 0.2){
+        if(checkSprint()){
             m_driveTrain.sprint(leftSpeedFactor * driveController.getRawAxis(1), rightSpeedFactor * driveController.getRawAxis(5));
-        } 
-        if(sprintButton.getAsBoolean() == false && driveController.getRawAxis(3) <= 0.2){
-            m_driveTrain.drive(leftSpeedFactor * driveController.getRawAxis(1), rightSpeedFactor * driveController.getRawAxis(5));
+        } else if (checkCrawl()){
+             m_driveTrain.crawl(leftSpeedFactor * driveController.getRawAxis(1), rightSpeedFactor * driveController.getRawAxis(5), driveController.getRawAxis(3));
+        } else {
+             m_driveTrain.drive(leftSpeedFactor * driveController.getRawAxis(1), rightSpeedFactor * driveController.getRawAxis(5));
         }
-        if(sprintButton.getAsBoolean() == false && driveController.getRawAxis(3) > 0.2){
-            m_driveTrain.crawl(leftSpeedFactor * driveController.getRawAxis(1), rightSpeedFactor * driveController.getRawAxis(5), driveController.getRawAxis(3));
-        }
-
-        if(sprintButton.getAsBoolean() == true && driveController.getRawAxis(3) > 0.2){
-            m_driveTrain.drive(leftSpeedFactor * driveController.getRawAxis(1), rightSpeedFactor * driveController.getRawAxis(5));
-        }
+        
      
         if (driveController.getRawButtonPressed(1)) {
             //Decide button value
@@ -101,16 +96,31 @@ public class TeleOp2 extends Command {
     }
 
     public boolean checkShoot(){
-        if ((operatorController.getRawButton(3)) & (!operatorController.getRawButton(1))){
+        if ((operatorController.getRawButton(3)) && (!operatorController.getRawButton(1))){
             return true;
         }
         return false;
     }
 
     public boolean checkIntake(){
-        if ((operatorController.getRawButton(1)) & (!operatorController.getRawButton(3))){
+        if ((operatorController.getRawButton(1)) && (!operatorController.getRawButton(3))){
             return true;
         }
+        return false;
+    }
+
+    public boolean checkSprint() {
+        if(sprintButton.getAsBoolean() == true && driveController.getRawAxis(3) <= 0.2){
+           return true;
+        } 
+        return false;
+
+    }
+
+     public boolean checkCrawl() {
+        if(sprintButton.getAsBoolean() == false && driveController.getRawAxis(3) > 0.2){
+           return true;
+        } 
         return false;
     }
     // Called once the command ends or is interrupted.
