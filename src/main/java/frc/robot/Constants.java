@@ -44,5 +44,9 @@ public class Constants {
       //based on 2023 stats
         public static final int kLeftShooterMotorPort = 8;
         public static final int kRightShooterMotorPort = 9;
+        public static final int kLeftShooterMAXMotorPort = 5;
+        public static final int kRightShooterMAXMotorPort = 6;
+
+        public static final int kShooterMAXspinup = 500;
     }
 }
