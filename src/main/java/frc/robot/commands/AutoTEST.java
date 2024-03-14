@@ -55,8 +55,8 @@ public class AutoTEST extends Command {
     @Override
     public void execute() {
         while (num < 1){
-            m_DriveMethods.driveForward(2);
-            //m_DriveMethods.driveTurnR(3);
+            //m_DriveMethods.driveForward(2);
+            m_DriveMethods.driveTurnR(0.55);
             num ++;
         }
         m_DriveMethods.driveStop();
