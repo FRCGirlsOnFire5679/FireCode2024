@@ -42,7 +42,7 @@ public class Shooter extends SubsystemBase {
         rightShooter.setInverted(true);
 
         rightMAXShooter = new CANSparkMax(Constants.DriveConstants.kRightShooterMAXMotorPort, MotorType.kBrushless);
-        rightMAXShooter.setInverted(true);
+        rightMAXShooter.setInverted(false);
         rightMAXShooter.setIdleMode(IdleMode.kBrake);
 
         leftMAXShooter = new CANSparkMax(Constants.DriveConstants.kLeftShooterMAXMotorPort, MotorType.kBrushless);
