@@ -86,10 +86,10 @@ public class TeleOp2 extends Command {
         }
         
         if(checkShoot()){
-            m_shooter.shoot(1);
+            m_shooter.newShoot(1);
         }
         else if (checkIntake()) {
-            m_shooter.intake(1);
+            m_shooter.newIntake(1);
         } else {
             m_shooter.hold();
         }
