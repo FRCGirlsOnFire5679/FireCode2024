@@ -90,20 +90,18 @@ public class TeleOp2 extends Command {
         }
         else if (checkIntake()) {
             m_shooter.newIntake(1);
-        } else {
-            m_shooter.hold();
-        }
+        } 
     }
 
     public boolean checkShoot(){
-        if ((operatorController.getRawButton(3)) && (!operatorController.getRawButton(1))){
+        if ((operatorController.getRawButton(1)) && (!operatorController.getRawButton(3))){
             return true;
         }
         return false;
     }
 
     public boolean checkIntake(){
-        if ((operatorController.getRawButton(1)) && (!operatorController.getRawButton(3))){
+        if ((operatorController.getRawButton(3)) && (!operatorController.getRawButton(1))){
             return true;
         }
         return false;

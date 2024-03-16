@@ -177,7 +177,7 @@ public class DriveMethods extends SubsystemBase {
         timer.reset();
         timer.start();
         while (timer.get() < time) {
-            m_shooter.newIntake(1);
+            m_shooter.newShoot(1);
         }           
             m_shooter.hold();
         return;
