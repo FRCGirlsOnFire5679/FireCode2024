@@ -85,6 +85,18 @@ public class TeleOp2 extends Command {
             }
         }
         
+        if (checkRight()){
+            m_shooter.setSparkMax(shootSpeed(operatorController.getRawAxis(3)));
+        } else {
+            m_shooter.hold();
+        }
+
+        if (checkLeft()){
+            m_shooter.setSpark(shootSpeed(operatorController.getRawAxis(4)));
+        } else {
+            m_shooter.hold();
+        }
+
         if(checkShoot()){
             m_shooter.newShoot(1);
         }
@@ -115,11 +127,32 @@ public class TeleOp2 extends Command {
 
     }
 
-     public boolean checkCrawl() {
+    public boolean checkCrawl() {
         if(sprintButton.getAsBoolean() == false && driveController.getRawAxis(3) > 0.2){
            return true;
         } 
         return false;
+    }
+
+    public boolean checkRight() {
+        if(operatorController.getRawAxis(3) > 0.5){
+           return true;
+        } 
+        return false;
+    }
+
+    public boolean checkLeft() {
+        if(operatorController.getRawAxis(4) > 0.5){
+           return true;
+        } 
+        return false;
+    }
+
+    public double shootSpeed(double trigger){
+        double percent = (trigger - 0.5) * 2;
+        double addon = percent * 0.2;
+        double finalValue = addon + 0.8;
+        return finalValue;
     }
     // Called once the command ends or is interrupted.
     @Override

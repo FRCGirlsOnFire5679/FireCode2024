@@ -47,6 +47,6 @@ public class Constants {
         public static final int kLeftShooterMAXMotorPort = 6;
         public static final int kRightShooterMAXMotorPort = 7;
 
-        public static final int kShooterMAXspinup = 1;
+        public static final double kShooterMAXspinup = 0.5;
     }
 }
