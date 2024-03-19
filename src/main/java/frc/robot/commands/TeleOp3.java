@@ -92,14 +92,14 @@ public class TeleOp3 extends Command {
         }
         
 
-        if (checkRight()){
-            m_shooter.setSparkMax(shootSpeed(operatorController.getRawAxis(3)));
+        if (operatorController.getRawButton(8)){
+            m_shooter.setSparkMax(1);
         } else {
             m_shooter.setSparkMax(0);
         }
 
-        if (checkLeft()){
-            m_shooter.setSpark(shootSpeed(operatorController.getRawAxis(4)));
+        if (operatorController.getRawButton(7)){
+            m_shooter.setSpark(1);
         } else {
             m_shooter.setSpark(0);
         }
